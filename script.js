@@ -1,7 +1,7 @@
 const defaultProfile = {
   login: "Xtop1337",
   name: "Xtop1337",
-  bio: "Developer and designer focused on clean interfaces, product thinking, and polished digital experiences.",
+  bio: "Developer and designer focused on polished interfaces, product thinking, and premium digital experiences.",
   avatar_url: "https://avatars.githubusercontent.com/u/121298652?v=4",
   html_url: "https://github.com/Xtop1337",
   blog: "",
@@ -16,7 +16,7 @@ const fallbackRepos = [
   {
     name: "portfolio",
     full_name: "Xtop1337/portfolio",
-    description: "Modern personal portfolio with glassmorphism styling and responsive UI.",
+    description: "A premium portfolio website with a glassmorphism aesthetic and responsive UI.",
     html_url: "https://github.com/Xtop1337/portfolio",
     homepage: "",
     language: "HTML",
@@ -27,7 +27,7 @@ const fallbackRepos = [
   {
     name: "ui-kit-demo",
     full_name: "Xtop1337/ui-kit-demo",
-    description: "Reusable interface system built around clean components and design tokens.",
+    description: "Design system and reusable components for quick product prototyping.",
     html_url: "https://github.com/Xtop1337/ui-kit-demo",
     homepage: "",
     language: "TypeScript",
@@ -38,7 +38,7 @@ const fallbackRepos = [
   {
     name: "dashboard-prototype",
     full_name: "Xtop1337/dashboard-prototype",
-    description: "Dashboard concept for analytics-driven workflows and product clarity.",
+    description: "Dashboard concept for analytics, clarity, and product-focused decision-making.",
     html_url: "https://github.com/Xtop1337/dashboard-prototype",
     homepage: "",
     language: "JavaScript",

@@ -1,60 +1,52 @@
 # Portfolio
 
-Это персональный сайт-портфолио с:
-- загрузкой данных профиля GitHub в реальном времени
-- карточками репозиториев с описанием, языком и ссылками на исходный код
-- темной и светлой темой
-- стилем Fluent / glassmorphism
-- адаптивной версткой для мобильных и десктопных устройств
-- формой обратной связи, которая ведёт на Google Form
+Modern portfolio website built with a Fluent glassmorphism aesthetic, responsive layout, GitHub API integration, and a contact form connected to Google Forms.
 
-## Структура проекта
+## Features
 
-- `index.html` — разметка страницы
-- `styles.css` — стили и адаптивность
-- `script.js` — загрузка GitHub API, переключение темы и работа формы
+- dynamic GitHub profile loading
+- repository cards with descriptions and source links
+- dark/light theme switch
+- premium glass-effect design with smooth motion
+- responsive layout for desktop and mobile
+- contact section with Google Form integration
 
-## Как это работает
+## Files
 
-Профиль и репозитории берутся из публичного GitHub API:
-- `https://api.github.com/users/Xtop1337`
-- `https://api.github.com/users/Xtop1337/repos?sort=updated&per_page=6`
+- `index.html` — page structure
+- `styles.css` — premium responsive design and glassmorphism styling
+- `script.js` — GitHub data fetch, theme toggle, and form behavior
 
-Это позволяет автоматически обновлять данные без ручного редактирования.
-
-## Форма обратной связи
-
-Форма отправки настроена так, чтобы открывать Google Form через браузер. Это удобно, если вам нужно быстро получать сообщения без собственного backend.
-
-Ссылка:
-- `https://docs.google.com/forms/d/e/1FAIpQLSfntB85uiaX8nUMAefr3M0V_QX7K7Mwb3cDJFxr24Ry6Yczwg/viewform?usp=publish-editor`
-
-## Запуск локально
+## Local run
 
 ```bash
 python -m http.server 8000
 ```
 
-После этого откройте:
+Then open:
 
 ```bash
 http://localhost:8000
 ```
 
-## Как настроить под себя
+## GitHub data
 
-1. Замените `Xtop1337` в `script.js` на своё имя пользователя GitHub.
-2. Измените email и ссылку Google Form в `index.html`.
-3. При желании обновите описание, стек технологий и секции проекта под вашу реальную деятельность.
+The site loads public data using:
 
-## Важно
+- `https://api.github.com/users/Xtop1337`
+- `https://api.github.com/users/Xtop1337/repos?sort=updated&per_page=6`
 
-Этот проект собран как статический сайт, поэтому он легко можно хостить на:
-- GitHub Pages
-- Netlify
-- Vercel
+## Contact form
 
-Если нужно, следующим сообщением могу сделать ещё и:
-- правильный деплой на GitHub Pages,
-- более кастомный дизайн под ваш стиль,
-- заполнение контента под реальный профиль и реальные проекты.
+The form opens a Google Form submission page so messages can be collected without a backend.
+
+## Customization
+
+Update the following values in the project to fit your profile:
+
+- GitHub username in `script.js`
+- email in `index.html`
+- Google Form link in `index.html` and `script.js`
+- project and stack descriptions in `index.html`
+
+To deploy, you can use GitHub Pages, Netlify, or Vercel.
