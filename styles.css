@@ -1,0 +1,990 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Xtop1337 | Portfolio</title>
+    <meta
+      name="description"
+      content="Portfolio of Xtop1337 — GitHub profile, projects, developer stack, demo previews, and contact form."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="page-shell">
+      <div class="bg-orb orb-1"></div>
+      <div class="bg-orb orb-2"></div>
+      <div class="bg-grid"></div>
+
+      <header class="topbar glass">
+        <a href="#home" class="brand" aria-label="Go to home section">
+          <span class="brand-mark">X</span>
+          <span class="brand-name">Xtop1337</span>
+        </a>
+
+        <nav class="nav" aria-label="Main navigation">
+          <a href="#about">About</a>
+          <a href="#projects">Projects</a>
+          <a href="#stack">Stack</a>
+          <a href="#contact">Contact</a>
+        </nav>
+
+        <div class="topbar-actions">
+          <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+            <span class="icon-sun">☀</span>
+            <span class="icon-moon">☾</span>
+          </button>
+          <a class="cta-link" href="#contact">Hire me</a>
+        </div>
+      </header>
+
+      <main>
+        <section class="hero glass" id="home">
+          <div class="hero-copy">
+            <div class="eyebrow-row">
+              <span class="status-dot"></span>
+              <span id="availabilityText">Available for work</span>
+            </div>
+
+            <h1>
+              Building clean digital products with a sharp eye for
+              <span class="gradient-text">user experience</span>.
+            </h1>
+
+            <p class="lead">
+              I design and build modern web experiences, interfaces, and tools that
+              balance performance, elegance, and real business goals.
+            </p>
+
+            <div class="hero-actions">
+              <a class="button primary" href="#projects">View projects</a>
+              <a class="button secondary" href="#contact">Let’s talk</a>
+            </div>
+
+            <ul class="quick-stats" aria-label="Profile stats">
+              <li>
+                <strong id="followersCount">0</strong>
+                <span>Followers</span>
+              </li>
+              <li>
+                <strong id="repoCount">0</strong>
+                <span>Repos</span>
+              </li>
+              <li>
+                <strong id="locationText">Remote</strong>
+                <span>Location</span>
+              </li>
+            </ul>
+          </div>
+
+          <div class="profile-panel">
+            <div class="profile-card glass-inner">
+              <div class="avatar-wrap">
+                <img id="profileAvatar" src="" alt="GitHub profile avatar" />
+              </div>
+              <div class="profile-meta">
+                <div>
+                  <p class="muted-label">GitHub profile</p>
+                  <h2 id="profileName">Loading…</h2>
+                </div>
+                <div class="badge-row">
+                  <span class="badge">Frontend</span>
+                  <span class="badge">UI/UX</span>
+                  <span class="badge">Product</span>
+                </div>
+              </div>
+              <div class="profile-bio" id="profileBio">
+                Loading profile data…
+              </div>
+              <div class="profile-links">
+                <a id="githubLink" href="#" target="_blank" rel="noreferrer">GitHub</a>
+                <a id="portfolioLink" href="#" target="_blank" rel="noreferrer">Website</a>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="about section-block" id="about">
+          <div class="section-heading">
+            <p class="eyebrow">About</p>
+            <h2>Focused on purposeful, modern experiences.</h2>
+          </div>
+
+          <div class="about-grid">
+            <article class="glass info-card">
+              <h3>What I do</h3>
+              <p>
+                I craft polished interfaces, front-end systems, and digital products
+                that are practical, scalable, and visually memorable.
+              </p>
+            </article>
+
+            <article class="glass info-card">
+              <h3>Approach</h3>
+              <p>
+                From idea exploration to implementation, I focus on usability,
+                performance, and crisp design decisions that make products feel premium.
+              </p>
+            </article>
+
+            <article class="glass info-card">
+              <h3>Working style</h3>
+              <p>
+                Clear communication, iterative delivery, and deep attention to detail
+                help teams move fast without compromising quality.
+              </p>
+            </article>
+          </div>
+        </section>
+
+        <section class="projects section-block" id="projects">
+          <div class="section-heading row-between">
+            <div>
+              <p class="eyebrow">Projects</p>
+              <h2>Featured work and experiments</h2>
+            </div>
+            <a class="text-link" id="githubProfileButton" href="#" target="_blank" rel="noreferrer">
+              View all GitHub repos
+            </a>
+          </div>
+
+          <div class="projects-grid" id="projectsGrid"></div>
+        </section>
+
+        <section class="stack section-block" id="stack">
+          <div class="section-heading">
+            <p class="eyebrow">Technology stack</p>
+            <h2>Tools I use to build products</h2>
+          </div>
+
+          <div class="stack-grid">
+            <div class="glass skill-card">
+              <h3>Core</h3>
+              <div class="chip-group">
+                <span class="chip">HTML5</span>
+                <span class="chip">CSS3</span>
+                <span class="chip">JavaScript</span>
+                <span class="chip">TypeScript</span>
+                <span class="chip">React</span>
+                <span class="chip">Next.js</span>
+              </div>
+            </div>
+
+            <div class="glass skill-card">
+              <h3>Design</h3>
+              <div class="chip-group">
+                <span class="chip">Figma</span>
+                <span class="chip">UI Systems</span>
+                <span class="chip">Design Tokens</span>
+                <span class="chip">Accessibility</span>
+              </div>
+            </div>
+
+            <div class="glass skill-card">
+              <h3>Workflow</h3>
+              <div class="chip-group">
+                <span class="chip">Git</span>
+                <span class="chip">Vercel</span>
+                <span class="chip">Netlify</span>
+                <span class="chip">API Integration</span>
+                <span class="chip">Performance</span>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="showcase section-block">
+          <div class="section-heading">
+            <p class="eyebrow">Demo preview</p>
+            <h2>Selected product concepts</h2>
+          </div>
+
+          <div class="showcase-grid">
+            <article class="glass demo-card">
+              <div class="demo-visual demo-one"></div>
+              <div class="demo-content">
+                <h3>Portfolio Experience</h3>
+                <p>High-end visual portfolio with glassmorphism and modern motion systems.</p>
+              </div>
+            </article>
+
+            <article class="glass demo-card">
+              <div class="demo-visual demo-two"></div>
+              <div class="demo-content">
+                <h3>Product Dashboard</h3>
+                <p>Clear data storytelling, UX-focused components, and a refined actionable layout.</p>
+              </div>
+            </article>
+          </div>
+        </section>
+
+        <section class="contact section-block" id="contact">
+          <div class="section-heading">
+            <p class="eyebrow">Contact</p>
+            <h2>Let’s build something meaningful.</h2>
+          </div>
+
+          <div class="contact-grid">
+            <div class="glass contact-panel">
+              <h3>Direct channels</h3>
+              <ul class="contact-list">
+                <li><span>Email</span><a href="mailto:hello@example.com">hello@example.com</a></li>
+                <li><span>GitHub</span><a id="githubLinkContact" href="#" target="_blank" rel="noreferrer">github.com/Xtop1337</a></li>
+                <li><span>Google Form</span><a href="https://docs.google.com/forms/d/e/1FAIpQLSfntB85uiaX8nUMAefr3M0V_QX7K7Mwb3cDJFxr24Ry6Yczwg/viewform?usp=publish-editor" target="_blank" rel="noreferrer">Open contact form</a></li>
+              </ul>
+            </div>
+
+            <form class="glass form-panel" id="contactForm">
+              <label>
+                <span>Name</span>
+                <input type="text" name="name" placeholder="Your name" required />
+              </label>
+
+              <label>
+                <span>Email</span>
+                <input type="email" name="email" placeholder="your@email.com" required />
+              </label>
+
+              <label>
+                <span>Project / inquiry</span>
+                <input type="text" name="project" placeholder="Website, app, freelance, collaboration" required />
+              </label>
+
+              <label>
+                <span>Message</span>
+                <textarea name="message" rows="5" placeholder="Tell me about your idea or project…" required></textarea>
+              </label>
+
+              <div class="form-actions">
+                <button class="button primary" type="submit">Send message</button>
+                <a
+                  class="button secondary"
+                  href="https://docs.google.com/forms/d/e/1FAIpQLSfntB85uiaX8nUMAefr3M0V_QX7K7Mwb3cDJFxr24Ry6Yczwg/viewform?usp=publish-editor"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  Open Google Form
+                </a>
+              </div>
+
+              <p class="form-status" id="formStatus" aria-live="polite"></p>
+            </form>
+          </div>
+        </section>
+      </main>
+
+      <footer class="footer">
+        <p>© <span id="year"></span> Xtop1337. Crafted for clarity, speed, and polish.</p>
+      </footer>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+"},{
