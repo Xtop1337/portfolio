@@ -1,1017 +1,209 @@
-* {
-  box-sizing: border-box;
-}
-
-:root {
-  --bg: #07111b;
-  --bg-soft: rgba(18, 24, 33, 0.7);
-  --panel: rgba(16, 22, 32, 0.58);
-  --panel-strong: rgba(22, 28, 38, 0.82);
-  --card: rgba(255, 255, 255, 0.06);
-  --card-border: rgba(255, 255, 255, 0.12);
-  --stroke: rgba(255, 255, 255, 0.08);
-  --text: #edf4ff;
-  --text-soft: #b7c4d6;
-  --text-muted: #90a2b9;
-  --primary: #5eead4;
-  --primary-2: #67e8f9;
-  --accent: #8b5cf6;
-  --shadow: rgba(6, 13, 20, 0.45);
-  --chip: rgba(255, 255, 255, 0.06);
-  --success: #34d399;
-  --warning: #fbbf24;
-}
-
-:root.light {
-  --bg: #edf4ff;
-  --bg-soft: rgba(255, 255, 255, 0.7);
-  --panel: rgba(255, 255, 255, 0.68);
-  --panel-strong: rgba(255, 255, 255, 0.82);
-  --card: rgba(255, 255, 255, 0.45);
-  --card-border: rgba(110, 120, 145, 0.18);
-  --stroke: rgba(10, 20, 36, 0.06);
-  --text: #122033;
-  --text-soft: #334560;
-  --text-muted: #65748d;
-  --primary: #0ea5e9;
-  --primary-2: #8b5cf6;
-  --accent: #6366f1;
-  --shadow: rgba(62, 95, 135, 0.12);
-  --chip: rgba(18, 32, 51, 0.04);
-  --success: #0ea371;
-  --warning: #d97706;
-}
-
-html {
-  scroll-behavior: smooth;
-}
-
-body {
-  margin: 0;
-  font-family: "Inter", sans-serif;
-  background: var(--bg);
-  color: var(--text);
-  transition: background 0.35s ease, color 0.35s ease;
-}
-
-img {
-  max-width: 100%;
-  display: block;
-}
-
-a {
-  color: inherit;
-  text-decoration: none;
-}
-
-button,
-input,
-textarea {
-  font: inherit;
-}
-
-.page-shell {
-  position: relative;
-  min-height: 100vh;
-  padding: 24px clamp(16px, 2vw, 32px) 48px;
-  overflow: hidden;
-}
-
-.bg-grid {
-  position: fixed;
-  inset: 0;
-  background-image: linear-gradient(rgba(255,255,255,0.04) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255,255,255,0.04) 1px, transparent 1px);
-  background-size: 36px 36px;
-  mask-image: radial-gradient(circle at center, black 30%, transparent 100%);
-  pointer-events: none;
-}
-
-.bg-orb {
-  position: fixed;
-  width: 500px;
-  height: 500px;
-  border-radius: 50%;
-  filter: blur(80px);
-  opacity: 0.28;
-  pointer-events: none;
-}
-
-.orb-1 {
-  background: rgba(94, 234, 212, 0.5);
-  top: -110px;
-  left: -90px;
-}
-
-.orb-2 {
-  background: rgba(139, 92, 246, 0.5);
-  right: -80px;
-  top: 180px;
-}
-
-.glass,
-.glass-inner {
-  background: var(--panel);
-  border: 1px solid var(--card-border);
-  box-shadow: 0 24px 70px var(--shadow);
-  backdrop-filter: blur(18px);
-  -webkit-backdrop-filter: blur(18px);
-}
-
-.topbar {
-  position: sticky;
-  top: 16px;
-  z-index: 20;
-  max-width: 1200px;
-  margin: 0 auto 28px;
-  padding: 16px 22px;
-  border-radius: 22px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 18px;
-}
-
-.brand {
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
-  font-weight: 700;
-}
-
-.brand-mark {
-  width: 32px;
-  height: 32px;
-  border-radius: 10px;
-  display: grid;
-  place-items: center;
-  background: linear-gradient(135deg, var(--primary), var(--accent));
-  color: #07111b;
-  font-weight: 800;
-}
-
-.nav {
-  display: inline-flex;
-  align-items: center;
-  gap: 20px;
-  color: var(--text-soft);
-}
-
-.nav a {
-  transition: color 0.2s ease;
-}
-
-.nav a:hover,
-.text-link:hover,
-.contact-list a:hover {
-  color: var(--text);
-}
-
-.topbar-actions {
-  display: flex;
-  align-items: center;
-  gap: 14px;
-}
-
-.theme-toggle {
-  width: 42px;
-  height: 42px;
-  border-radius: 12px;
-  border: 1px solid var(--card-border);
-  background: rgba(255,255,255,0.03);
-  color: var(--text);
-  cursor: pointer;
-  transition: transform 0.2s ease, background 0.2s ease;
-}
-
-.theme-toggle:hover {
-  transform: translateY(-1px);
-}
-
-.icon-sun,
-.icon-moon {
-  font-size: 1rem;
-}
-
-:root:not(.light) .icon-moon {
-  display: none;
-}
-
-:root.light .icon-sun {
-  display: none;
-}
-
-.cta-link,
-.button,
-.text-link {
-  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
-}
-
-.cta-link,
-.button {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 14px;
-  padding: 0.8rem 1.2rem;
-  border: 1px solid var(--card-border);
-  background: rgba(255,255,255,0.04);
-  color: var(--text);
-  font-weight: 600;
-}
-
-.button.primary {
-  background: linear-gradient(135deg, var(--primary), var(--primary-2));
-  border: none;
-  color: #06131d;
-  box-shadow: 0 18px 40px rgba(94, 234, 212, 0.3);
-}
-
-.button.secondary {
-  background: rgba(255,255,255,0.02);
-}
-
-.cta-link:hover,
-.button:hover,
-.text-link:hover {
-  transform: translateY(-2px);
-}
-
-main {
-  max-width: 1200px;
-  margin: 0 auto;
-}
-
-.hero {
-  border-radius: 30px;
-  padding: clamp(28px, 4vw, 54px);
-  display: grid;
-  grid-template-columns: 1.15fr 0.85fr;
-  gap: 24px;
-  min-height: 620px;
-  align-items: center;
-}
-
-.hero-copy {
-  padding-right: 8px;
-}
-
-.eyebrow-row {
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
-  padding: 0.45rem 0.7rem;
-  border-radius: 999px;
-  background: rgba(52, 211, 153, 0.08);
-  border: 1px solid rgba(52, 211, 153, 0.2);
-  font-size: 0.78rem;
-  color: var(--success);
-}
-
-.status-dot {
-  width: 9px;
-  height: 9px;
-  border-radius: 50%;
-  background: var(--success);
-  box-shadow: 0 0 0 8px rgba(52, 211, 153, 0.12);
-}
-
-h1 {
-  font-size: clamp(2.7rem, 5vw, 5rem);
-  line-height: 0.95;
-  letter-spacing: -0.06em;
-  margin: 22px 0 18px;
-}
-
-.gradient-text {
-  background: linear-gradient(135deg, var(--primary), var(--primary-2), var(--accent));
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
-}
-
-.lead {
-  max-width: 620px;
-  font-size: 1.08rem;
-  line-height: 1.7;
-  color: var(--text-soft);
-}
-
-.hero-actions {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 16px;
-  margin-top: 28px;
-}
-
-.quick-stats {
-  list-style: none;
-  padding: 0;
-  margin: 30px 0 0;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 18px;
-}
-
-.quick-stats li {
-  min-width: 120px;
-  padding: 16px 18px;
-  border-radius: 18px;
-  border: 1px solid var(--card-border);
-  background: rgba(255,255,255,0.02);
-  display: flex;
-  flex-direction: column;
-  gap: 4px;
-}
-
-.quick-stats strong {
-  font-size: 1.35rem;
-}
-
-.quick-stats span {
-  color: var(--text-muted);
-  font-size: 0.8rem;
-}
-
-.profile-panel {
-  display: flex;
-  justify-content: center;
-}
-
-.profile-card {
-  width: min(100%, 420px);
-  border-radius: 28px;
-  padding: 22px;
-  background: rgba(17, 24, 32, 0.5);
-}
-
-.avatar-wrap {
-  width: 120px;
-  height: 120px;
-  border-radius: 34px;
-  overflow: hidden;
-  border: 2px solid rgba(255,255,255,0.12);
-  box-shadow: 0 14px 35px rgba(12, 16, 22, 0.28);
-}
-
-.avatar-wrap img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-.profile-meta {
-  display: flex;
-  justify-content: space-between;
-  align-items: end;
-  gap: 12px;
-  margin-top: 18px;
-}
-
-.muted-label {
-  margin: 0 0 6px;
-  color: var(--text-muted);
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
-  font-size: 0.68rem;
-}
-
-.profile-meta h2 {
-  margin: 0;
-  font-size: clamp(1.4rem, 2vw, 2rem);
-}
-
-.badge-row {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
-  justify-content: flex-end;
-}
-
-.badge,
-.chip {
-  border: 1px solid var(--card-border);
-  background: var(--chip);
-  border-radius: 999px;
-  padding: 0.42rem 0.72rem;
-  font-size: 0.74rem;
-  color: var(--text-soft);
-}
-
-.profile-bio {
-  margin-top: 20px;
-  line-height: 1.7;
-  color: var(--text-soft);
-}
-
-.profile-links {
-  margin-top: 20px;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 12px;
-}
-
-.profile-links a {
-  padding: 0.64rem 0.9rem;
-  border-radius: 12px;
-  background: rgba(255,255,255,0.04);
-  border: 1px solid var(--card-border);
-}
-
-.section-block {
-  padding-top: 90px;
-}
-
-.section-heading {
-  margin-bottom: 24px;
-}
-
-.section-heading h2 {
-  margin: 0;
-  font-size: clamp(2rem, 3vw, 3rem);
-  letter-spacing: -0.05em;
-}
-
-.eyebrow {
-  margin: 0 0 12px;
-  color: var(--text-muted);
-  text-transform: uppercase;
-  letter-spacing: 0.12em;
-  font-size: 0.72rem;
-}
-
-.row-between {
-  display: flex;
-  align-items: end;
-  justify-content: space-between;
-  gap: 12px;
-}
-
-.text-link {
-  color: var(--text-soft);
-  font-weight: 600;
-}
-
-.about-grid,
-.stack-grid,
-.showcase-grid,
-.contact-grid {
-  display: grid;
-  gap: 20px;
-}
-
-.about-grid {
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-}
-
-.info-card,
-.skill-card,
-.demo-card,
-.contact-panel,
-.form-panel {
-  border-radius: 24px;
-  padding: 24px;
-}
-
-.info-card h3,
-.skill-card h3,
-.demo-content h3,
-.contact-panel h3 {
-  margin-top: 0;
-  margin-bottom: 12px;
-  font-size: 1.2rem;
-}
-
-.info-card p,
-.demo-content p,
-.contact-panel p {
-  margin: 0;
-  color: var(--text-soft);
-  line-height: 1.7;
-}
-
-.projects-grid {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 20px;
-}
-
-.project-card {
-  border-radius: 24px;
-  padding: 22px;
-  background: rgba(255,255,255,0.04);
-  border: 1px solid var(--card-border);
-  box-shadow: 0 18px 52px var(--shadow);
-  transition: transform 0.28s ease, border-color 0.28s ease;
-}
-
-.project-card:hover {
-  transform: translateY(-4px);
-  border-color: rgba(94, 234, 212, 0.35);
-}
-
-.project-top {
-  display: flex;
-  align-items: start;
-  justify-content: space-between;
-  gap: 12px;
-  margin-bottom: 18px;
-}
-
-.project-name {
-  margin: 0;
-  font-size: 1.2rem;
-}
-
-.project-language {
-  color: var(--primary);
-  font-size: 0.8rem;
-  font-weight: 700;
-}
-
-.project-description {
-  min-height: 72px;
-  color: var(--text-soft);
-  line-height: 1.7;
-  margin-bottom: 18px;
-}
-
-.project-meta {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-  color: var(--text-muted);
-  font-size: 0.8rem;
-  margin-bottom: 18px;
-}
-
-.project-meta span {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  padding: 0.42rem 0.6rem;
-  border-radius: 999px;
-  background: rgba(255,255,255,0.03);
-}
-
-.project-actions {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 10px;
-  margin-top: auto;
-}
-
-.project-link {
-  color: var(--text);
-  font-weight: 600;
-}
-
-.stack-grid {
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-}
-
-.chip-group {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-}
-
-.showcase-grid {
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-}
-
-.demo-card {
-  overflow: hidden;
-  padding: 0;
-}
-
-.demo-visual {
-  height: 220px;
-  background-size: cover;
-  background-position: center;
-}
-
-.demo-one {
-  background:
-    linear-gradient(120deg, rgba(14, 165, 233, 0.4), rgba(139, 92, 246, 0.4)),
-    radial-gradient(circle at top left, rgba(255,255,255,0.18), transparent 30%),
-    linear-gradient(135deg, #0b1120, #1f2a44 52%, #0f172a);
-}
-
-.demo-two {
-  background:
-    linear-gradient(135deg, rgba(16, 24, 40, 0.25), rgba(94, 234, 212, 0.6)),
-    linear-gradient(135deg, #0a1221, #0f1f2f, #101827);
-}
-
-.demo-content {
-  padding: 22px 22px 26px;
-}
-
-.contact-grid {
-  grid-template-columns: 0.9fr 1.1fr;
-}
-
-.contact-panel,
-.form-panel {
-  background: rgba(255,255,255,0.04);
-  border: 1px solid var(--card-border);
-  box-shadow: 0 18px 52px var(--shadow);
-}
-
-.contact-list {
-  list-style: none;
-  padding: 0;
-  margin: 18px 0 0;
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
-}
-
-.contact-list li {
-  display: flex;
-  flex-direction: column;
-  gap: 6px;
-  color: var(--text-soft);
-}
-
-.contact-list span {
-  font-size: 0.75rem;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  color: var(--text-muted);
-}
-
-.form-panel {
-  display: flex;
-  flex-direction: column;
-  gap: 18px;
-}
-
-.form-panel label {
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-  color: var(--text-soft);
-}
-
-.form-panel input,
-.form-panel textarea {
-  width: 100%;
-  border: 1px solid var(--card-border);
-  border-radius: 14px;
-  background: rgba(255,255,255,0.02);
-  color: var(--text);
-  padding: 0.9rem 1rem;
-  resize: vertical;
-  transition: border-color 0.2s ease, box-shadow 0.2s ease;
-}
-
-.form-panel input:focus,
-.form-panel textarea:focus {
-  outline: none;
-  border-color: rgba(94, 234, 212, 0.8);
-  box-shadow: 0 0 0 3px rgba(94, 234, 212, 0.15);
-}
-
-.form-actions {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 12px;
-}
-
-.form-status {
-  min-height: 24px;
-  margin: 0;
-  color: var(--success);
-  font-weight: 500;
-}
-
-.footer {
-  max-width: 1200px;
-  margin: 54px auto 0;
-  padding: 30px 0 0;
-  text-align: center;
-  border-top: 1px solid var(--stroke);
-  color: var(--text-muted);
-}
-
-@media (max-width: 980px) {
-  .hero,
-  .contact-grid,
-  .about-grid,
-  .projects-grid,
-  .stack-grid,
-  .showcase-grid {
-    grid-template-columns: 1fr;
+const defaultProfile = {
+  login: "Xtop1337",
+  name: "Xtop1337",
+  bio: "Developer and designer focused on clean interfaces, product thinking, and polished digital experiences.",
+  avatar_url: "https://avatars.githubusercontent.com/u/121298652?v=4",
+  html_url: "https://github.com/Xtop1337",
+  blog: "",
+  location: "Remote / Worldwide",
+  public_repos: 0,
+  followers: 0,
+  hireable: true,
+  type: "User"
+};
+
+const fallbackRepos = [
+  {
+    name: "portfolio",
+    full_name: "Xtop1337/portfolio",
+    description: "Modern personal portfolio with glassmorphism styling and responsive UI.",
+    html_url: "https://github.com/Xtop1337/portfolio",
+    homepage: "",
+    language: "HTML",
+    stargazers_count: 0,
+    forks_count: 0,
+    topics: ["portfolio", "frontend"]
+  },
+  {
+    name: "ui-kit-demo",
+    full_name: "Xtop1337/ui-kit-demo",
+    description: "Reusable interface system built around clean components and design tokens.",
+    html_url: "https://github.com/Xtop1337/ui-kit-demo",
+    homepage: "",
+    language: "TypeScript",
+    stargazers_count: 0,
+    forks_count: 0,
+    topics: ["ui", "design-system"]
+  },
+  {
+    name: "dashboard-prototype",
+    full_name: "Xtop1337/dashboard-prototype",
+    description: "Dashboard concept for analytics-driven workflows and product clarity.",
+    html_url: "https://github.com/Xtop1337/dashboard-prototype",
+    homepage: "",
+    language: "JavaScript",
+    stargazers_count: 0,
+    forks_count: 0,
+    topics: ["dashboard", "ux"]
   }
+];
 
-  .topbar {
-    flex-wrap: wrap;
-    justify-content: center;
-  }
+const profileApi = "https://api.github.com/users/Xtop1337";
+const reposApi = "https://api.github.com/users/Xtop1337/repos?sort=updated&per_page=6";
+const contactFormUrl = "https://docs.google.com/forms/d/e/1FAIpQLSfntB85uiaX8nUMAefr3M0V_QX7K7Mwb3cDJFxr24Ry6Yczwg/viewform?usp=publish-editor";
 
-  .nav {
-    order: 3;
-    width: 100%;
-    justify-content: center;
-  }
+const profileNameEl = document.getElementById("profileName");
+const profileBioEl = document.getElementById("profileBio");
+const profileAvatarEl = document.getElementById("profileAvatar");
+const githubLinkEl = document.getElementById("githubLink");
+const githubLinkContactEl = document.getElementById("githubLinkContact");
+const githubProfileButtonEl = document.getElementById("githubProfileButton");
+const portfolioLinkEl = document.getElementById("portfolioLink");
+const projectsGridEl = document.getElementById("projectsGrid");
+const availabilityTextEl = document.getElementById("availabilityText");
+const followersCountEl = document.getElementById("followersCount");
+const repoCountEl = document.getElementById("repoCount");
+const locationTextEl = document.getElementById("locationText");
+const formStatusEl = document.getElementById("formStatus");
+const yearEl = document.getElementById("year");
+const themeToggleEl = document.getElementById("themeToggle");
 
-  .hero {
-    min-height: auto;
+const root = document.documentElement;
+const savedTheme = localStorage.getItem("portfolio-theme");
+
+function applyTheme(theme) {
+  const isLight = theme === "light";
+  root.classList.toggle("light", isLight);
+  localStorage.setItem("portfolio-theme", theme);
+}
+
+if (savedTheme) {
+  applyTheme(savedTheme);
+} else {
+  const prefersLight = window.matchMedia("(prefers-color-scheme: light)").matches;
+  applyTheme(prefersLight ? "light" : "dark");
+}
+
+themeToggleEl.addEventListener("click", () => {
+  const nextTheme = root.classList.contains("light") ? "dark" : "light";
+  applyTheme(nextTheme);
+});
+
+function renderProfile(profile) {
+  const safeName = profile.name || profile.login || "Xtop1337";
+  const safeBio = profile.bio || "Developer creating thoughtful digital experiences.";
+  const safeLocation = profile.location || "Remote / Worldwide";
+  const safeFollowers = profile.followers ?? 0;
+  const safeRepos = profile.public_repos ?? 0;
+
+  profileNameEl.textContent = safeName;
+  profileBioEl.textContent = safeBio;
+  profileAvatarEl.src = profile.avatar_url || defaultProfile.avatar_url;
+  profileAvatarEl.alt = `${safeName} avatar`;
+
+  githubLinkEl.href = profile.html_url || defaultProfile.html_url;
+  githubLinkContactEl.href = profile.html_url || defaultProfile.html_url;
+  githubProfileButtonEl.href = profile.html_url || defaultProfile.html_url;
+  portfolioLinkEl.href = profile.blog || profile.html_url || defaultProfile.html_url;
+
+  followersCountEl.textContent = safeFollowers.toLocaleString();
+  repoCountEl.textContent = safeRepos.toLocaleString();
+  locationTextEl.textContent = safeLocation;
+
+  availabilityTextEl.textContent = profile.hireable ? "Available for work" : "Not available right now";
+}
+
+function renderProjects(repos) {
+  const data = Array.isArray(repos) && repos.length ? repos : fallbackRepos;
+
+  const markup = data
+    .filter((repo) => repo && repo.name)
+    .slice(0, 6)
+    .map((repo) => {
+      const name = repo.name || "Untitled project";
+      const description = repo.description || "A focused project built with performance and usability in mind.";
+      const language = repo.language || "Code";
+      const stars = repo.stargazers_count ?? 0;
+      const forks = repo.forks_count ?? 0;
+      const homepage = repo.homepage || "";
+      const projectUrl = repo.html_url || "#";
+      const topic = repo.topics && repo.topics.length ? repo.topics[0] : "Product";
+
+      return `
+        <article class="project-card">
+          <div class="project-top">
+            <h3 class="project-name">${name}</h3>
+            <span class="project-language">${language}</span>
+          </div>
+
+          <p class="project-description">${description}</p>
+
+          <div class="project-meta">
+            <span>★ ${stars}</span>
+            <span>⎇ ${forks}</span>
+            <span>${topic}</span>
+          </div>
+
+          <div class="project-actions">
+            <a class="project-link" href="${projectUrl}" target="_blank" rel="noreferrer">Source code</a>
+            ${homepage ? `<a class="project-link" href="${homepage}" target="_blank" rel="noreferrer">Demo</a>` : ""}
+          </div>
+        </article>
+      `;
+    })
+    .join("");
+
+  projectsGridEl.innerHTML = markup;
+}
+
+async function loadGitHubData() {
+  try {
+    const [profileResponse, reposResponse] = await Promise.all([
+      fetch(profileApi, { headers: { Accept: "application/vnd.github+json" } }),
+      fetch(reposApi, { headers: { Accept: "application/vnd.github+json" } })
+    ]);
+
+    if (!profileResponse.ok) {
+      throw new Error("Profile request failed");
+    }
+
+    const profile = await profileResponse.json();
+    const repos = reposResponse.ok ? await reposResponse.json() : fallbackRepos;
+
+    renderProfile(profile);
+    renderProjects(repos);
+  } catch (error) {
+    renderProfile(defaultProfile);
+    renderProjects(fallbackRepos);
   }
 }
 
-@media (max-width: 640px) {
-  .page-shell {
-    padding-top: 18px;
+document.getElementById("contactForm").addEventListener("submit", function (event) {
+  event.preventDefault();
+
+  const form = event.currentTarget;
+  const data = new FormData(form);
+  const name = (data.get("name") || "").toString().trim();
+  const email = (data.get("email") || "").toString().trim();
+  const project = (data.get("project") || "").toString().trim();
+  const message = (data.get("message") || "").toString().trim();
+
+  if (!name || !email || !project || !message) {
+    formStatusEl.textContent = "Please complete all fields before sending.";
+    formStatusEl.style.color = "var(--warning)";
+    return;
   }
 
-  .topbar {
-    padding: 14px 16px;
-    top: 10px;
-  }
+  const googleFormUrl = `${contactFormUrl}&entry.1404557893=${encodeURIComponent(name)}&entry.573393221=${encodeURIComponent(email)}&entry.2061467077=${encodeURIComponent(project)}&entry.286742202=${encodeURIComponent(message)}`;
 
-  .brand-name {
-    font-size: 0.92rem;
-  }
+  formStatusEl.textContent = "Opening the Google Form to send your message…";
+  formStatusEl.style.color = "var(--success)";
 
-  .nav {
-    gap: 12px;
-    font-size: 0.85rem;
-    flex-wrap: wrap;
-  }
+  window.open(googleFormUrl, "_blank", "noopener,noreferrer");
+  form.reset();
+});
 
-  .hero,
-  .info-card,
-  .skill-card,
-  .demo-card,
-  .contact-panel,
-  .form-panel,
-  .project-card {
-    border-radius: 20px;
-  }
+const currentYear = new Date().getFullYear();
+yearEl.textContent = currentYear;
 
-  .hero {
-    padding: 24px 18px;
-  }
-
-  .project-actions,
-  .form-actions,
-  .profile-meta,
-  .row-between {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-
-  .badge-row {
-    justify-content: flex-start;
-  }
-
-  .hero-actions {
-    flex-direction: column;
-    align-items: stretch;
-  }
-
-  .button,
-  .cta-link {
-    width: 100%;
-  }
-}
-
-@keyframes floatUp {
-  from {
-    opacity: 0;
-    transform: translateY(12px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-.hero,
-.project-card,
-.skill-card,
-.info-card,
-.demo-card,
-.contact-panel,
-.form-panel {
-  animation: floatUp 0.6s ease both;
-}
-
-@media (prefers-reduced-motion: reduce) {
-  html {
-    scroll-behavior: auto;
-  }
-
-  *, *::before, *::after {
-    animation: none !important;
-    transition: none !important;
-  }
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-"},{
+loadGitHubData();

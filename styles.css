@@ -1,990 +1,795 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Xtop1337 | Portfolio</title>
-    <meta
-      name="description"
-      content="Portfolio of Xtop1337 — GitHub profile, projects, developer stack, demo previews, and contact form."
-    />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="styles.css" />
-  </head>
-  <body>
-    <div class="page-shell">
-      <div class="bg-orb orb-1"></div>
-      <div class="bg-orb orb-2"></div>
-      <div class="bg-grid"></div>
-
-      <header class="topbar glass">
-        <a href="#home" class="brand" aria-label="Go to home section">
-          <span class="brand-mark">X</span>
-          <span class="brand-name">Xtop1337</span>
-        </a>
-
-        <nav class="nav" aria-label="Main navigation">
-          <a href="#about">About</a>
-          <a href="#projects">Projects</a>
-          <a href="#stack">Stack</a>
-          <a href="#contact">Contact</a>
-        </nav>
-
-        <div class="topbar-actions">
-          <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
-            <span class="icon-sun">☀</span>
-            <span class="icon-moon">☾</span>
-          </button>
-          <a class="cta-link" href="#contact">Hire me</a>
-        </div>
-      </header>
-
-      <main>
-        <section class="hero glass" id="home">
-          <div class="hero-copy">
-            <div class="eyebrow-row">
-              <span class="status-dot"></span>
-              <span id="availabilityText">Available for work</span>
-            </div>
-
-            <h1>
-              Building clean digital products with a sharp eye for
-              <span class="gradient-text">user experience</span>.
-            </h1>
-
-            <p class="lead">
-              I design and build modern web experiences, interfaces, and tools that
-              balance performance, elegance, and real business goals.
-            </p>
-
-            <div class="hero-actions">
-              <a class="button primary" href="#projects">View projects</a>
-              <a class="button secondary" href="#contact">Let’s talk</a>
-            </div>
-
-            <ul class="quick-stats" aria-label="Profile stats">
-              <li>
-                <strong id="followersCount">0</strong>
-                <span>Followers</span>
-              </li>
-              <li>
-                <strong id="repoCount">0</strong>
-                <span>Repos</span>
-              </li>
-              <li>
-                <strong id="locationText">Remote</strong>
-                <span>Location</span>
-              </li>
-            </ul>
-          </div>
-
-          <div class="profile-panel">
-            <div class="profile-card glass-inner">
-              <div class="avatar-wrap">
-                <img id="profileAvatar" src="" alt="GitHub profile avatar" />
-              </div>
-              <div class="profile-meta">
-                <div>
-                  <p class="muted-label">GitHub profile</p>
-                  <h2 id="profileName">Loading…</h2>
-                </div>
-                <div class="badge-row">
-                  <span class="badge">Frontend</span>
-                  <span class="badge">UI/UX</span>
-                  <span class="badge">Product</span>
-                </div>
-              </div>
-              <div class="profile-bio" id="profileBio">
-                Loading profile data…
-              </div>
-              <div class="profile-links">
-                <a id="githubLink" href="#" target="_blank" rel="noreferrer">GitHub</a>
-                <a id="portfolioLink" href="#" target="_blank" rel="noreferrer">Website</a>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        <section class="about section-block" id="about">
-          <div class="section-heading">
-            <p class="eyebrow">About</p>
-            <h2>Focused on purposeful, modern experiences.</h2>
-          </div>
-
-          <div class="about-grid">
-            <article class="glass info-card">
-              <h3>What I do</h3>
-              <p>
-                I craft polished interfaces, front-end systems, and digital products
-                that are practical, scalable, and visually memorable.
-              </p>
-            </article>
-
-            <article class="glass info-card">
-              <h3>Approach</h3>
-              <p>
-                From idea exploration to implementation, I focus on usability,
-                performance, and crisp design decisions that make products feel premium.
-              </p>
-            </article>
-
-            <article class="glass info-card">
-              <h3>Working style</h3>
-              <p>
-                Clear communication, iterative delivery, and deep attention to detail
-                help teams move fast without compromising quality.
-              </p>
-            </article>
-          </div>
-        </section>
-
-        <section class="projects section-block" id="projects">
-          <div class="section-heading row-between">
-            <div>
-              <p class="eyebrow">Projects</p>
-              <h2>Featured work and experiments</h2>
-            </div>
-            <a class="text-link" id="githubProfileButton" href="#" target="_blank" rel="noreferrer">
-              View all GitHub repos
-            </a>
-          </div>
-
-          <div class="projects-grid" id="projectsGrid"></div>
-        </section>
-
-        <section class="stack section-block" id="stack">
-          <div class="section-heading">
-            <p class="eyebrow">Technology stack</p>
-            <h2>Tools I use to build products</h2>
-          </div>
-
-          <div class="stack-grid">
-            <div class="glass skill-card">
-              <h3>Core</h3>
-              <div class="chip-group">
-                <span class="chip">HTML5</span>
-                <span class="chip">CSS3</span>
-                <span class="chip">JavaScript</span>
-                <span class="chip">TypeScript</span>
-                <span class="chip">React</span>
-                <span class="chip">Next.js</span>
-              </div>
-            </div>
-
-            <div class="glass skill-card">
-              <h3>Design</h3>
-              <div class="chip-group">
-                <span class="chip">Figma</span>
-                <span class="chip">UI Systems</span>
-                <span class="chip">Design Tokens</span>
-                <span class="chip">Accessibility</span>
-              </div>
-            </div>
-
-            <div class="glass skill-card">
-              <h3>Workflow</h3>
-              <div class="chip-group">
-                <span class="chip">Git</span>
-                <span class="chip">Vercel</span>
-                <span class="chip">Netlify</span>
-                <span class="chip">API Integration</span>
-                <span class="chip">Performance</span>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        <section class="showcase section-block">
-          <div class="section-heading">
-            <p class="eyebrow">Demo preview</p>
-            <h2>Selected product concepts</h2>
-          </div>
-
-          <div class="showcase-grid">
-            <article class="glass demo-card">
-              <div class="demo-visual demo-one"></div>
-              <div class="demo-content">
-                <h3>Portfolio Experience</h3>
-                <p>High-end visual portfolio with glassmorphism and modern motion systems.</p>
-              </div>
-            </article>
-
-            <article class="glass demo-card">
-              <div class="demo-visual demo-two"></div>
-              <div class="demo-content">
-                <h3>Product Dashboard</h3>
-                <p>Clear data storytelling, UX-focused components, and a refined actionable layout.</p>
-              </div>
-            </article>
-          </div>
-        </section>
-
-        <section class="contact section-block" id="contact">
-          <div class="section-heading">
-            <p class="eyebrow">Contact</p>
-            <h2>Let’s build something meaningful.</h2>
-          </div>
-
-          <div class="contact-grid">
-            <div class="glass contact-panel">
-              <h3>Direct channels</h3>
-              <ul class="contact-list">
-                <li><span>Email</span><a href="mailto:hello@example.com">hello@example.com</a></li>
-                <li><span>GitHub</span><a id="githubLinkContact" href="#" target="_blank" rel="noreferrer">github.com/Xtop1337</a></li>
-                <li><span>Google Form</span><a href="https://docs.google.com/forms/d/e/1FAIpQLSfntB85uiaX8nUMAefr3M0V_QX7K7Mwb3cDJFxr24Ry6Yczwg/viewform?usp=publish-editor" target="_blank" rel="noreferrer">Open contact form</a></li>
-              </ul>
-            </div>
-
-            <form class="glass form-panel" id="contactForm">
-              <label>
-                <span>Name</span>
-                <input type="text" name="name" placeholder="Your name" required />
-              </label>
-
-              <label>
-                <span>Email</span>
-                <input type="email" name="email" placeholder="your@email.com" required />
-              </label>
-
-              <label>
-                <span>Project / inquiry</span>
-                <input type="text" name="project" placeholder="Website, app, freelance, collaboration" required />
-              </label>
-
-              <label>
-                <span>Message</span>
-                <textarea name="message" rows="5" placeholder="Tell me about your idea or project…" required></textarea>
-              </label>
-
-              <div class="form-actions">
-                <button class="button primary" type="submit">Send message</button>
-                <a
-                  class="button secondary"
-                  href="https://docs.google.com/forms/d/e/1FAIpQLSfntB85uiaX8nUMAefr3M0V_QX7K7Mwb3cDJFxr24Ry6Yczwg/viewform?usp=publish-editor"
-                  target="_blank"
-                  rel="noreferrer"
-                >
-                  Open Google Form
-                </a>
-              </div>
-
-              <p class="form-status" id="formStatus" aria-live="polite"></p>
-            </form>
-          </div>
-        </section>
-      </main>
-
-      <footer class="footer">
-        <p>© <span id="year"></span> Xtop1337. Crafted for clarity, speed, and polish.</p>
-      </footer>
-    </div>
-
-    <script src="script.js"></script>
-  </body>
-</html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-"},{
+* {
+  box-sizing: border-box;
+}
+
+:root {
+  --bg: #07111b;
+  --panel: rgba(14, 21, 30, 0.58);
+  --panel-strong: rgba(22, 29, 39, 0.82);
+  --card-border: rgba(255, 255, 255, 0.14);
+  --stroke: rgba(255, 255, 255, 0.08);
+  --text: #edf4ff;
+  --text-soft: #bfd1ea;
+  --text-muted: #8fa3bc;
+  --primary: #5eead4;
+  --primary-2: #67e8f9;
+  --accent: #8b5cf6;
+  --shadow: rgba(5, 15, 22, 0.45);
+  --chip: rgba(255, 255, 255, 0.04);
+  --success: #34d399;
+  --warning: #fbbf24;
+}
+
+:root.light {
+  --bg: #edf4ff;
+  --panel: rgba(255, 255, 255, 0.72);
+  --panel-strong: rgba(255, 255, 255, 0.84);
+  --card-border: rgba(89, 107, 138, 0.18);
+  --stroke: rgba(9, 18, 31, 0.08);
+  --text: #14243b;
+  --text-soft: #415777;
+  --text-muted: #617796;
+  --primary: #0ea5e9;
+  --primary-2: #8b5cf6;
+  --accent: #6366f1;
+  --shadow: rgba(63, 96, 138, 0.12);
+  --chip: rgba(17, 27, 42, 0.04);
+  --success: #0ea371;
+  --warning: #b45309;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: "Inter", sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  transition: background 0.35s ease, color 0.35s ease;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button,
+input,
+textarea {
+  font: inherit;
+}
+
+.page-shell {
+  position: relative;
+  min-height: 100vh;
+  padding: 24px clamp(16px, 2vw, 32px) 48px;
+  overflow: hidden;
+}
+
+.bg-grid {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  background-image: linear-gradient(rgba(255, 255, 255, 0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.04) 1px, transparent 1px);
+  background-size: 36px 36px;
+  mask-image: radial-gradient(circle at center, black 30%, transparent 100%);
+}
+
+.bg-orb {
+  position: fixed;
+  width: 500px;
+  height: 500px;
+  border-radius: 50%;
+  filter: blur(80px);
+  opacity: 0.26;
+  pointer-events: none;
+}
+
+.orb-1 {
+  top: -120px;
+  left: -80px;
+  background: rgba(94, 234, 212, 0.48);
+}
+
+.orb-2 {
+  right: -80px;
+  top: 180px;
+  background: rgba(139, 92, 246, 0.46);
+}
+
+.glass,
+.glass-inner {
+  background: var(--panel);
+  border: 1px solid var(--card-border);
+  box-shadow: 0 24px 70px var(--shadow);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+}
+
+.topbar {
+  position: sticky;
+  top: 16px;
+  z-index: 20;
+  max-width: 1200px;
+  margin: 0 auto 28px;
+  padding: 16px 22px;
+  border-radius: 22px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 18px;
+}
+
+.brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: 700;
+}
+
+.brand-mark {
+  width: 32px;
+  height: 32px;
+  display: grid;
+  place-items: center;
+  border-radius: 10px;
+  background: linear-gradient(135deg, var(--primary), var(--accent));
+  color: #07111b;
+  font-weight: 800;
+}
+
+.nav {
+  display: inline-flex;
+  align-items: center;
+  gap: 20px;
+  color: var(--text-soft);
+}
+
+.nav a,
+.text-link,
+.contact-list a,
+.project-link {
+  transition: color 0.2s ease;
+}
+
+.nav a:hover,
+.text-link:hover,
+.contact-list a:hover,
+.project-link:hover {
+  color: var(--text);
+}
+
+.topbar-actions {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.theme-toggle {
+  width: 42px;
+  height: 42px;
+  border: 1px solid var(--card-border);
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.03);
+  color: var(--text);
+  cursor: pointer;
+}
+
+.icon-sun,
+.icon-moon {
+  font-size: 1rem;
+}
+
+:root:not(.light) .icon-moon {
+  display: none;
+}
+
+:root.light .icon-sun {
+  display: none;
+}
+
+.cta-link,
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 14px;
+  padding: 0.8rem 1.2rem;
+  border: 1px solid var(--card-border);
+  background: rgba(255, 255, 255, 0.04);
+  color: var(--text);
+  font-weight: 600;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.button.primary {
+  background: linear-gradient(135deg, var(--primary), var(--primary-2));
+  border: none;
+  color: #07111b;
+  box-shadow: 0 18px 40px rgba(94, 234, 212, 0.3);
+}
+
+.button.secondary {
+  background: rgba(255, 255, 255, 0.02);
+}
+
+.cta-link:hover,
+.button:hover,
+.text-link:hover {
+  transform: translateY(-2px);
+}
+
+main {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.hero {
+  border-radius: 30px;
+  padding: clamp(28px, 4vw, 54px);
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  gap: 24px;
+  min-height: 620px;
+  align-items: center;
+}
+
+.hero-copy {
+  padding-right: 8px;
+}
+
+.eyebrow-row {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 0.45rem 0.7rem;
+  border-radius: 999px;
+  background: rgba(52, 211, 153, 0.08);
+  border: 1px solid rgba(52, 211, 153, 0.2);
+  font-size: 0.8rem;
+  color: var(--success);
+}
+
+.status-dot {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: var(--success);
+  box-shadow: 0 0 0 8px rgba(52, 211, 153, 0.12);
+}
+
+h1 {
+  margin: 22px 0 18px;
+  font-size: clamp(2.8rem, 5vw, 5rem);
+  line-height: 0.95;
+  letter-spacing: -0.06em;
+}
+
+.gradient-text {
+  background: linear-gradient(135deg, var(--primary), var(--primary-2), var(--accent));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.lead {
+  max-width: 620px;
+  font-size: 1.08rem;
+  line-height: 1.7;
+  color: var(--text-soft);
+}
+
+.hero-actions {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+  margin-top: 28px;
+}
+
+.quick-stats {
+  list-style: none;
+  padding: 0;
+  margin: 30px 0 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 18px;
+}
+
+.quick-stats li {
+  min-width: 120px;
+  padding: 16px 18px;
+  border-radius: 18px;
+  border: 1px solid var(--card-border);
+  background: rgba(255, 255, 255, 0.02);
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.quick-stats strong {
+  font-size: 1.35rem;
+}
+
+.quick-stats span {
+  color: var(--text-muted);
+  font-size: 0.8rem;
+}
+
+.profile-panel {
+  display: flex;
+  justify-content: center;
+}
+
+.profile-card {
+  width: min(100%, 420px);
+  border-radius: 28px;
+  padding: 22px;
+  background: rgba(17, 24, 32, 0.5);
+}
+
+.avatar-wrap {
+  width: 120px;
+  height: 120px;
+  border-radius: 34px;
+  overflow: hidden;
+  border: 2px solid rgba(255, 255, 255, 0.12);
+  box-shadow: 0 14px 35px rgba(12, 16, 22, 0.28);
+}
+
+.avatar-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.profile-meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+  gap: 12px;
+  margin-top: 18px;
+}
+
+.muted-label {
+  margin: 0 0 6px;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-size: 0.68rem;
+}
+
+.profile-meta h2 {
+  margin: 0;
+  font-size: clamp(1.4rem, 2vw, 2rem);
+}
+
+.badge-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  justify-content: flex-end;
+}
+
+.badge,
+.chip {
+  border: 1px solid var(--card-border);
+  background: var(--chip);
+  border-radius: 999px;
+  padding: 0.42rem 0.72rem;
+  font-size: 0.74rem;
+  color: var(--text-soft);
+}
+
+.profile-bio {
+  margin-top: 20px;
+  line-height: 1.7;
+  color: var(--text-soft);
+}
+
+.profile-links {
+  margin-top: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.profile-links a {
+  padding: 0.64rem 0.9rem;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid var(--card-border);
+}
+
+.section-block {
+  padding-top: 90px;
+}
+
+.section-heading {
+  margin-bottom: 24px;
+}
+
+.section-heading h2 {
+  margin: 0;
+  font-size: clamp(2rem, 3vw, 3rem);
+  letter-spacing: -0.05em;
+}
+
+.eyebrow {
+  margin: 0 0 12px;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  font-size: 0.72rem;
+}
+
+.row-between {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.text-link {
+  color: var(--text-soft);
+  font-weight: 600;
+}
+
+.about-grid,
+.stack-grid,
+.showcase-grid,
+.contact-grid {
+  display: grid;
+  gap: 20px;
+}
+
+.about-grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.info-card,
+.skill-card,
+.demo-card,
+.contact-panel,
+.form-panel {
+  border-radius: 24px;
+  padding: 24px;
+}
+
+.info-card h3,
+.skill-card h3,
+.demo-content h3,
+.contact-panel h3 {
+  margin-top: 0;
+  margin-bottom: 12px;
+  font-size: 1.2rem;
+}
+
+.info-card p,
+.demo-content p,
+.contact-panel p {
+  margin: 0;
+  color: var(--text-soft);
+  line-height: 1.7;
+}
+
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 20px;
+}
+
+.project-card {
+  border-radius: 24px;
+  padding: 22px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid var(--card-border);
+  box-shadow: 0 18px 52px var(--shadow);
+  transition: transform 0.28s ease, border-color 0.28s ease;
+}
+
+.project-card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(94, 234, 212, 0.35);
+}
+
+.project-top {
+  display: flex;
+  align-items: start;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 18px;
+}
+
+.project-name {
+  margin: 0;
+  font-size: 1.2rem;
+}
+
+.project-language {
+  color: var(--primary);
+  font-size: 0.8rem;
+  font-weight: 700;
+}
+
+.project-description {
+  min-height: 72px;
+  color: var(--text-soft);
+  line-height: 1.7;
+  margin-bottom: 18px;
+}
+
+.project-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  color: var(--text-muted);
+  font-size: 0.8rem;
+  margin-bottom: 18px;
+}
+
+.project-meta span {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 0.42rem 0.6rem;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.03);
+}
+
+.project-actions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+  margin-top: auto;
+}
+
+.project-link {
+  color: var(--text);
+  font-weight: 600;
+}
+
+.stack-grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.chip-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.showcase-grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.demo-card {
+  overflow: hidden;
+  padding: 0;
+}
+
+.demo-visual {
+  height: 220px;
+  background-size: cover;
+  background-position: center;
+}
+
+.demo-one {
+  background:
+    linear-gradient(120deg, rgba(14, 165, 233, 0.4), rgba(139, 92, 246, 0.4)),
+    radial-gradient(circle at top left, rgba(255,255,255,0.18), transparent 30%),
+    linear-gradient(135deg, #0b1120, #1f2a44 52%, #0f172a);
+}
+
+.demo-two {
+  background:
+    linear-gradient(135deg, rgba(16, 24, 40, 0.25), rgba(94, 234, 212, 0.6)),
+    linear-gradient(135deg, #0a1221, #0f1f2f, #101827);
+}
+
+.demo-content {
+  padding: 22px 22px 26px;
+}
+
+.contact-grid {
+  grid-template-columns: 0.9fr 1.1fr;
+}
+
+.contact-panel,
+.form-panel {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid var(--card-border);
+  box-shadow: 0 18px 52px var(--shadow);
+}
+
+.contact-list {
+  list-style: none;
+  padding: 0;
+  margin: 18px 0 0;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.contact-list li {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  color: var(--text-soft);
+}
+
+.contact-list span {
+  font-size: 0.75rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+
+.form-panel {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.form-panel label {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  color: var(--text-soft);
+}
+
+.form-panel input,
+.form-panel textarea {
+  width: 100%;
+  border: 1px solid var(--card-border);
+  border-radius: 14px;
+  background: rgba(255, 255, 255, 0.02);
+  color: var(--text);
+  padding: 0.9rem 1rem;
+  resize: vertical;
+}
+
+.form-panel input:focus,
+.form-panel textarea:focus {
+  outline: none;
+  border-color: rgba(94, 234, 212, 0.8);
+  box-shadow: 0 0 0 3px rgba(94, 234, 212, 0.15);
+}
+
+.form-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.form-status {
+  min-height: 24px;
+  margin: 0;
+  color: var(--success);
+  font-weight: 500;
+}
+
+.footer {
+  max-width: 1200px;
+  margin: 54px auto 0;
+  padding: 30px 0 0;
+  text-align: center;
+  border-top: 1px solid var(--stroke);
+  color: var(--text-muted);
+}
+
+@media (max-width: 980px) {
+  .hero,
+  .contact-grid,
+  .about-grid,
+  .projects-grid,
+  .stack-grid,
+  .showcase-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .topbar {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .nav {
+    order: 3;
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 640px) {
+  .page-shell {
+    padding-top: 18px;
+  }
+
+  .topbar {
+    padding: 14px 16px;
+    top: 10px;
+  }
+
+  .nav {
+    gap: 12px;
+    font-size: 0.85rem;
+    flex-wrap: wrap;
+  }
+
+  .hero,
+  .info-card,
+  .skill-card,
+  .demo-card,
+  .contact-panel,
+  .form-panel,
+  .project-card {
+    border-radius: 20px;
+  }
+
+  .hero {
+    padding: 24px 18px;
+  }
+
+  .project-actions,
+  .form-actions,
+  .profile-meta,
+  .row-between {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .badge-row {
+    justify-content: flex-start;
+  }
+
+  .hero-actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .button,
+  .cta-link {
+    width: 100%;
+  }
+}
+
+@keyframes floatUp {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.hero,
+.project-card,
+.skill-card,
+.info-card,
+.demo-card,
+.contact-panel,
+.form-panel {
+  animation: floatUp 0.6s ease both;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *, *::before, *::after {
+    animation: none !important;
+    transition: none !important;
+  }
+}
