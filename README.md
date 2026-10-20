@@ -1,52 +1,81 @@
-# Portfolio
+# Портфолио Xtop1337
 
-Modern portfolio website built with a Fluent glassmorphism aesthetic, responsive layout, GitHub API integration, and a contact form connected to Google Forms.
+Сайт-портфолио в стиле **Fluent Design / Liquid Glass**: стекло с размытием, подсветка за курсором, плавные анимации, тёмная и светлая темы, адаптивная вёрстка для ПК, планшетов и телефонов.
 
-## Features
+Обычный статический сайт (HTML + CSS + JS), без сборки и зависимостей.
 
-- dynamic GitHub profile loading
-- repository cards with descriptions and source links
-- dark/light theme switch
-- premium glass-effect design with smooth motion
-- responsive layout for desktop and mobile
-- contact section with Google Form integration
+## Что на сайте
 
-## Files
+| Раздел | Что показывает |
+| --- | --- |
+| **Профиль** | Аватар, имя, био, локация, статистика (репозитории, звёзды, подписчики) из GitHub и полоса языков по репозиториям |
+| **Статус занятости** | Индикатор «свободен / частично занят / занят» в шапке и в контактах |
+| **Сайты** | Репозитории со ссылкой на сайт (поле *Website* или GitHub Pages) с живым мини-превью и полноэкранным просмотром в режимах «компьютер / планшет / телефон» |
+| **Проекты** | Все публичные репозитории: описание, язык, звёзды, топики, ссылки на исходный код и демо. Поиск, фильтр по языку, сортировка |
+| **Стек технологий** | Интерактивные карточки с уровнем владения; клик по технологии показывает проекты, где она используется |
+| **Контакты** | Форма обратной связи, отправляющая ответы в Google Forms |
 
-- `index.html` — page structure
-- `styles.css` — premium responsive design and glassmorphism styling
-- `script.js` — GitHub data fetch, theme toggle, and form behavior
+## Данные GitHub в реальном времени
 
-## Local run
-
-```bash
-python -m http.server 8000
-```
-
-Then open:
-
-```bash
-http://localhost:8000
-```
-
-## GitHub data
-
-The site loads public data using:
+Сайт обращается к публичному GitHub API прямо из браузера посетителя:
 
 - `https://api.github.com/users/Xtop1337`
-- `https://api.github.com/users/Xtop1337/repos?sort=updated&per_page=6`
+- `https://api.github.com/users/Xtop1337/repos?per_page=100&sort=updated&type=owner`
 
-## Contact form
+Данные обновляются при каждом открытии, каждые 5 минут, пока вкладка открыта, и по кнопке ⟳ в карточке профиля. Последний ответ кэшируется в `localStorage`, поэтому страница открывается мгновенно и продолжает работать, если GitHub недоступен или исчерпан лимит (60 запросов в час с одного IP).
 
-The form opens a Google Form submission page so messages can be collected without a backend.
+Чтобы проект появился в разделе **Сайты**, укажите в репозитории ссылку *Website* (⚙️ справа от «About») или включите GitHub Pages.
 
-## Customization
+## Форма обратной связи (Google Forms)
 
-Update the following values in the project to fit your profile:
+Сейчас в разделе контактов показывается ваша Google-форма, встроенная в стеклянную карточку. Она работает сразу.
 
-- GitHub username in `script.js`
-- email in `index.html`
-- Google Form link in `index.html` and `script.js`
-- project and stack descriptions in `index.html`
+Чтобы вместо неё включить «родную» стеклянную форму сайта (имя, email/Telegram, сообщение), укажите ID полей формы:
 
-To deploy, you can use GitHub Pages, Netlify, or Vercel.
+1. Откройте форму в редакторе Google Forms → ⋮ → **Получить предзаполненную ссылку**.
+2. Заполните поля любыми значениями (например, `name`, `email`, `message`) и нажмите **Получить ссылку**.
+3. В скопированной ссылке будут параметры вида `entry.123456789=name`. Перенесите их в `assets/js/config.js`:
+
+```js
+googleForm: {
+  formId: "1FAIpQLSfntB85uiaX8nUMAefr3M0V_QX7K7Mwb3cDJFxr24Ry6Yczwg",
+  entries: {
+    name: "entry.123456789",
+    email: "entry.987654321",
+    message: "entry.555555555",
+  },
+},
+```
+
+Поля в Google-форме должны быть текстовыми (короткий ответ / абзац), а сбор email-адресов респондентов в настройках формы нужно отключить, иначе Google отклонит отправку. Ответы появятся во вкладке **Ответы** формы (их можно связать с Google Таблицей и включить уведомления на почту).
+
+## Настройка
+
+Всё, что нужно менять, находится в `assets/js/config.js`:
+
+- `githubUser` — логин GitHub;
+- `availability` — статус занятости и текст;
+- `stack` — технологии, уровни, цвета и привязка к языкам/топикам репозиториев;
+- `hiddenRepos`, `pinnedRepos`, `showForks` — какие репозитории показывать и в каком порядке;
+- `repoOverrides` — своё описание или ссылка на демо для конкретного репозитория;
+- `googleForm` — форма обратной связи.
+
+## Структура
+
+```
+index.html            разметка
+assets/css/style.css  стили: темы, стекло, анимации, адаптив
+assets/js/config.js   настройки
+assets/js/app.js      GitHub API, рендер, фильтры, превью, тема, форма
+```
+
+## Запуск и публикация
+
+Локально:
+
+```bash
+python3 -m http.server 8000
+# http://localhost:8000
+```
+
+Публикация на GitHub Pages: **Settings → Pages → Deploy from a branch → `main` / root**. Сайт будет доступен по адресу `https://xtop1337.github.io/portfolio/`.
